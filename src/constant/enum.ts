@@ -1,3 +1,5 @@
+import { registerEnumType } from "type-graphql";
+
 export enum Environment{
     DEVELOPMENT="DEVELOPMENT",
     PRODUCTION="PRODUCTION"
@@ -28,3 +30,13 @@ export enum Mode {
     REFRESH = "Refresh",
   }
   
+  export enum Role {
+    ADMIN = "ADMIN",
+    SUPER_ADMIN = "SUPER_ADMIN",
+    USER = "USER",
+  }
+  
+  registerEnumType(Role, {
+    description: "The roles that  user can have",
+    name: "Role",
+  });
